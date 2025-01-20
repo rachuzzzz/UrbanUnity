@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CITIZEN LOGIN</title>
+  <title>CITIZEN SIGNUP</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <style>
     body {
@@ -172,8 +172,8 @@
           <img src="logos.png" alt="UrbanUnity Logo">
         </a>
         <div class="ms-auto">
-          <a href="login.html" class="btn btn-link">Citizen Login</a>
-          <a href="govt-login.html" class="btn btn-primary">Authority Login</a>
+          <a href="clogin3.html" class="btn btn-link">Citizen Login</a>
+          <a href="alogin.html" class="btn btn-primary">Authority Login</a>
         </div>
       </div>
     </nav>
@@ -201,64 +201,87 @@
         <label for="city">City</label>
         <select id="city" required>
           <option value="" disabled selected>Select a city</option>
-          <!-- Cities options here -->
+          <option value="Allapra">Allapra</option>
+          <option value="Ambalamedu">Ambalamedu</option>
+          <option value="Angamaly">Angamaly</option>
+          <option value="Arakkunnam">Arakkunnam</option>
+          <option value="Chembarakky">Chembarakky</option>
+          <option value="Chendamangalam">Chendamangalam</option>
+          <option value="Chengamanad">Chengamanad</option>
+          <option value="Cheranallur">Cheranallur</option>
+          <option value="Cheruvattoor">Cheruvattoor</option>
+          <option value="Choornikkara">Choornikkara</option>
+          <option value="Chottanikkara">Chottanikkara</option>
+          <option value="Chowwara">Chowwara</option>
+          <option value="Chowwera">Chowwera</option>
+          <option value="Edachira">Edachira</option>
+          <option value="Edathala">Edathala</option>
+          <option value="Eloor">Eloor</option>
+          <option value="Ernakulam">Ernakulam</option>
+          <option value="Irumpanam">Irumpanam</option>
+          <option value="Kadamakkudy Islands">Kadamakkudy Islands</option>
+          <option value="Kadayiruppu">Kadayiruppu</option>
+          <option value="Kadungalloor">Kadungalloor</option>
+          <option value="Kalady">Kalady</option>
+          <option value="Kanjoor">Kanjoor</option>
+          <option value="Kaprikkad">Kaprikkad</option>
+          <option value="Keezhmad">Keezhmad</option>
+          <option value="Kochi">Kochi</option>
+          <option value="Kochi metropolitan area">Kochi metropolitan area</option>
+          <option value="Kolenchery">Kolenchery</option>
+          <option value="Koonammavu">Koonammavu</option>
+          <option value="Koothattukulam">Koothattukulam</option>
+          <option value="Kothamangalam">Kothamangalam</option>
+          <option value="Kottuvally">Kottuvally</option>
+          <option value="Kundannoor">Kundannoor</option>
+          <option value="Kunnukara">Kunnukara</option>
+          <option value="Kureekkad">Kureekkad</option>
+          <option value="Malayattoor">Malayattoor</option>
+          <option value="Malayidomthuruth">Malayidomthuruth</option>
+          <option value="Manjaly">Manjaly</option>
+          <option value="Maradu">Maradu</option>
+          <option value="Mattoor">Mattoor</option>
+          <option value="Moolampilly">Moolampilly</option>
+          <option value="Muvattupuzha">Muvattupuzha</option>
+          <option value="Nayarambalam">Nayarambalam</option>
+          <option value="Nedumbassery">Nedumbassery</option>
+          <option value="Nedungad">Nedungad</option>
+          <option value="North Paravur">North Paravur</option>
+          <option value="Oorakkad">Oorakkad</option>
+          <option value="Palliyangadi">Palliyangadi</option>
+          <option value="Pampakuda">Pampakuda</option>
+          <option value="Payyal">Payyal</option>
+          <option value="Perumbavoor">Perumbavoor</option>
+          <option value="Perumpadappu">Perumpadappu</option>
+          <option value="Pezhakkappilly">Pezhakkappilly</option>
+          <option value="Piravom">Piravom</option>
+          <option value="Pizhala">Pizhala</option>
+          <option value="Ponjassery">Ponjassery</option>
+          <option value="Pukkattupadi">Pukkattupadi</option>
+          <option value="Puliyanam">Puliyanam</option>
+          <option value="Thamarachal">Thamarachal</option>
+          <option value="Thiruvankulam">Thiruvankulam</option>
+          <option value="Thottakkattukara">Thottakkattukara</option>
+          <option value="Thuruthipilly">Thuruthipilly</option>
+          <option value="Udayamperoor">Udayamperoor</option>
+          <option value="Varappuzha">Varappuzha</option>
+          <option value="Vazhakkala">Vazhakkala</option>
+          <option value="Vazhakulam">Vazhakulam</option>
+          <option value="Venduvazhy">Venduvazhy</option>
+          <option value="Vengoor">Vengoor</option>
         </select>
         <div class="error" id="city-error"></div>
 
         <button type="submit">Login</button>
       </form>
       <div class="help-text">
-        <p>New user? <a href="#">Sign up</a></p>
+        <p>Already a user? <a href="clogin3.html">Sign up</a></p>
       </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <script>
-    function validateForm() {
-      // Clear previous error messages
-      document.getElementById("first-name-error").innerText = "";
-      document.getElementById("last-name-error").innerText = "";
-      document.getElementById("phone-error").innerText = "";
-      document.getElementById("city-error").innerText = "";
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script
 
-      let isValid = true;
-
-      // Validate first name
-      const firstName = document.getElementById("first-name").value;
-      if (firstName.trim() === "") {
-        document.getElementById("first-name-error").innerText = "First name is required.";
-        isValid = false;
-      }
-
-      // Validate last name
-      const lastName = document.getElementById("last-name").value;
-      if (lastName.trim() === "") {
-        document.getElementById("last-name-error").innerText = "Last name is required.";
-        isValid = false;
-      }
-
-      // Validate phone number (10 digits)
-      const phone = document.getElementById("phone").value;
-      const phoneRegex = /^[0-9]{10}$/;
-      if (!phoneRegex.test(phone)) {
-        document.getElementById("phone-error").innerText = "Phone number must be 10 digits.";
-        isValid = false;
-      }
-
-      // Validate city selection
-      const city = document.getElementById("city").value;
-      if (!city) {
-        document.getElementById("city-error").innerText = "Please select a city.";
-        isValid = false;
-      }
-
-      return isValid;
-    }
-  </script>
-</body>
-</html>
 
 
 
