@@ -11,10 +11,11 @@
       background: linear-gradient(135deg, #0066cc, #74b9ff);
       margin: 0;
       height: 100vh;
-      animation: fadeIn 1s ease-in-out; /* Fade in for the entire body */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* Navbar styling */
     .navbar {
       background-color: white;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -23,70 +24,41 @@
       top: 0;
       left: 0;
       z-index: 1000;
-      animation: slideIn 0.5s ease-in-out;
     }
 
     .navbar-brand img {
-      height: 45px;
-    }
-
-    .ms-auto a {
-      margin-right: 10px;
+      height: 35px;
     }
 
     .content {
-      padding-top: 150px; /* To prevent content from being hidden behind navbar */
+      padding-top: 100px;
+      width: 100%;
+      max-width: 600px;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - 80px);
-      opacity: 0;
-      animation: fadeInUp 1.5s forwards; /* Slide up and fade in content */
+      flex-direction: column;
     }
 
     .form-container {
       background-color: #ffffff;
-      padding: 40px 50px; /* Increased padding for a bigger form */
+      padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      max-width: 600px; /* Increased max-width */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       width: 100%;
+      max-width: 500px;
+    }
+
+    .form-title, .form-subtitle {
       text-align: center;
-      opacity: 0;
-      animation: fadeIn 1.5s ease-out forwards; /* Fade in for form */
-    }
-
-    h1 {
-      font-size: 26px;
-      margin-bottom: 15px;
-      color: #005bb5;
-      opacity: 0;
-      animation: fadeInText 1s ease-out forwards; /* Fade in text */
-    }
-
-    label {
-      display: block;
-      font-size: 14px;
-      margin-bottom: 5px;
-      color: #333333;
-      text-align: left;
     }
 
     input, select {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
+      padding: 10px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 10px;
-      font-size: 14px;
-      transition: 0.3s ease;
-      opacity: 0;
-      animation: fadeInInput 1.5s ease-out forwards; /* Fade in inputs */
-    }
-
-    input:hover, select:hover {
-      border-color: #0066cc;
-      box-shadow: 0 4px 8px rgba(0, 102, 204, 0.1);
     }
 
     button {
@@ -98,9 +70,6 @@
       border-radius: 10px;
       font-size: 16px;
       cursor: pointer;
-      transition: background 0.3s ease;
-      opacity: 0;
-      animation: fadeInButton 2s ease-out forwards; /* Fade in button */
     }
 
     button:hover {
@@ -108,132 +77,83 @@
     }
 
     .help-text {
-      margin-top: 15px;
-      font-size: 13px;
-      color: #666666;
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
     }
 
-    .help-text a {
-      color: #005bb5;
-      text-decoration: none;
+    .footer {
+      background: linear-gradient(135deg, #0066cc, #74b9ff);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      font-size: 14px;
     }
 
-    .help-text a:hover {
-      text-decoration: underline;
+    @media screen and (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+        max-width: 90%;
+      }
+      .content {
+        padding-top: 120px;
+      }
     }
-
-    /* Form error styling */
-    .error {
-      color: red;
-      font-size: 12px;
-      text-align: left;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeInInput {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInText {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInButton {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
   </style>
 </head>
 <body>
 
-  <!-- Header with Navbar -->
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="homepage2.html">
-          <img src="logos.png" alt="UrbanUnity Logo">
-        </a>
-        <div class="ms-auto">
-          <a href="clogin3.html" class="btn btn-link">Citizen Login</a>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="logos.png" alt="UrbanUnity Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="ms-auto d-flex gap-2">
+          <a href="blogin.html" class="btn btn-link">Contractor Login</a>
           <a href="alogin.html" class="btn btn-primary">Government Login</a>
         </div>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
   <div class="content">
-    <!-- Citizen Signup Form -->
     <div class="form-container">
       <form id="citizenSignupForm" onsubmit="return validateForm()">
-        <h1>Citizen Signup</h1>
-        <p>Please enter your details to continue</p>
+        <h1 class="form-title">Citizen Signup</h1>
+        <p class="form-subtitle">Please enter your details to continue</p>
 
         <label for="first-name">First Name</label>
         <input type="text" id="first-name" placeholder="First Name" required>
-        <div class="error" id="first-name-error"></div>
 
         <label for="last-name">Last Name</label>
         <input type="text" id="last-name" placeholder="Last Name" required>
-        <div class="error" id="last-name-error"></div>
 
         <label for="phone">Phone Number</label>
         <input type="text" id="phone" placeholder="Phone Number" required>
-        <div class="error" id="phone-error"></div>
 
         <label for="city">City</label>
         <select id="city" required>
           <option value="" disabled selected>Select a city</option>
-          <option value="Allapra">Allapra</option>
-          <option value="Ambalamedu">Ambalamedu</option>
-          <option value="Angamaly">Angamaly</option>
-          <option value="Aroor">Aroor</option>
-          <option value="Cherthala">Cherthala</option>
-          <option value="Chottanikkara">Chottanikkara</option>
-          <option value="Eloor">Eloor</option>
-          <option value="Eranakulam">Eranakulam</option>
-          <option value="Kadavanthra">Kadavanthra</option>
           <option value="Kochi">Kochi</option>
-          <option value="Kothamangalam">Kothamangalam</option>
-          <option value="Kumarapuram">Kumarapuram</option>
-          <option value="Maradu">Maradu</option>
-          <option value="Muvattupuzha">Muvattupuzha</option>
-          <option value="Palarivattom">Palarivattom</option>
-          <option value="Perumbavoor">Perumbavoor</option>
-          <option value="Shornur">Shornur</option>
-          <option value="Vyttila">Vyttila</option>
-          <!-- Add more cities as needed -->
+          <option value="Eranakulam">Eranakulam</option>
         </select>
-        <div class="error" id="city-error"></div>
 
         <label for="username">Username</label>
         <input type="text" id="username" placeholder="Username" required>
-        <div class="error" id="username-error"></div>
 
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="Password" required>
-        <div class="error" id="password-error"></div>
 
         <label for="retype-password">Retype Password</label>
         <input type="password" id="retype-password" placeholder="Retype Password" required>
-        <div class="error" id="retype-password-error"></div>
 
         <button type="submit">Sign Up</button>
       </form>
@@ -243,18 +163,17 @@
     </div>
   </div>
 
+
+
   <script>
     function validateForm() {
       let password = document.getElementById('password').value;
       let retypePassword = document.getElementById('retype-password').value;
-      let isValid = true;
-
       if (password !== retypePassword) {
-        document.getElementById('retype-password-error').innerText = "Passwords do not match!";
-        isValid = false;
+        alert("Passwords do not match!");
+        return false;
       }
-
-      return isValid;
+      return true;
     }
   </script>
 
