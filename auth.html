@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Unity - Government Reporting Hub</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9ff;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        a.button:hover {
+            background-color: #004094;
+        }
+
+        /* Header */
+        .header {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header .logo img {
+            height: 50px;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav ul li a {
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to bottom right, #0056b3, #4a90e2);
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f9fcff;
+        }
+
+        .features-section .container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .features-section .feature {
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .features-section .feature img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px 20px;
+        }
+
+        .announcement-list,
+        .report-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .stats .stat {
+            text-align: center;
+            background-color: #e8f3ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .signup-section {
+            text-align: center;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 50px 20px;
+        }
+
+        /* Colorful Sections */
+        #announcements {
+            background-color: #fff8e1;
+            border-left: 5px solid #fbc02d;
+        }
+
+        #reports {
+            background-color: #e8f5e9;
+            border-left: 5px solid #388e3c;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer a {
+            color: #4a90e2;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logos.png" alt="Urban Unity Logo">
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#announcements">Announcements</a></li>
+                    <li><a href="#reports">Reported Issues</a></li>
+                    <li><a href="#statistics">Statistics</a></li>
+                    <li><a href="#login">Authority Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Urban Unity - Government Reporting Hub</h1>
+                <p>Connecting citizens and local authorities with a seamless platform for a better community.</p>
+                
+            </div>
+        </section>
+
+        <section id="announcements" class="section">
+            <h1>Official Announcements</h1>
+            <div class="announcement-list">
+                <article>
+                    <h2>Policy Update: Urban Development Act</h2>
+                    <p>Details about the new urban development policies...</p>
+                </article>
+                <article>
+                    <h2>New Infrastructure Project</h2>
+                    <p>Information about upcoming city infrastructure projects...</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="reports" class="section">
+            <h1>Reported Issues</h1>
+            <div class="report-list">
+                <article>
+                    <h2>Potholes</h2>
+                    <p>Reports: <select>
+                    <option value="Report 1">Report 1: Large pothole on Main St. - Status: Under Review</option>
+                    <option value="Report 2">Report 2: Multiple potholes near Park Ave. - Status: Pending</option>
+                </select></p>
+                </article>
+                <article>
+                    <h2>Street light malfunctioned</h2>
+                    <p>Reports:
+                <select>
+                    <option value="Report 1">Report 1: Light out at 5th and Elm - Status: Resolved</option>
+                    <option value="Report 2">Report 2: Flickering light near City Hall - Status: Under Review</option>
+                </select></p>
+                </article>
+            </div>
+        
+
+            <div class="report-list">
+                <article>
+                    <h2>Garbage Overflow</h2>
+                    <p>Reports:<select>
+                    <option value="Report 1">Report 1: Trash not collected in Sector 3 - Status: Pending</option>
+                    <option value="Report 2">Report 2: Overflowing bins near Market Square - Status: Under Review</option>
+                </select></p>
+                </article>
+                <article>
+                    <h2>Power Outage in Sector 7</h2>
+                    <p>Reports: <select>
+                    <option value="Report 1">Report 1: Outage during storm - Status: Resolved</option>
+                    <option value="Report 2">Report 2: Intermittent outages reported - Status: Under Review</option>
+                </select></p>
+                </article>
+            </div>
+        </section>
+
+        <section id="statistics" class="section">
+            <h1>Key Statistics</h1>
+            <div class="stats">
+                <div class="stat">
+                    <h2>1,245</h2>
+                    <p>Issues Reported</p>
+                </div>
+                <div class="stat">
+                    <h2>890</h2>
+                    <p>Issues Resolved</p>
+                </div>
+                <div class="stat">
+                    <h2>10</h2>
+                    <p>Ongoing Projects</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Email: support@urbanunity.com</p>
+            <p>Phone: 1-800-URBAN-UNITY</p>
+            <p>&copy; 2025 Urban Unity. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
