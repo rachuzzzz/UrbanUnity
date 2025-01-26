@@ -8,12 +8,14 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0066cc, #74b9ff);
+      background: url('cbanner.jpg') no-repeat center center fixed;
+      background-size: cover;
       margin: 0;
       height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .navbar {
@@ -24,6 +26,7 @@
       top: 0;
       left: 0;
       z-index: 1000;
+      animation: slideIn 0.5s ease-in-out;
     }
 
     .navbar-brand img {
@@ -41,12 +44,14 @@
     }
 
     .form-container {
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       width: 100%;
       max-width: 500px;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease-out forwards;
     }
 
     .form-title, .form-subtitle {
@@ -92,6 +97,21 @@
       bottom: 0;
       left: 0;
       font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     @media screen and (max-width: 600px) {
@@ -185,3 +205,4 @@
 
 </body>
 </html>
+

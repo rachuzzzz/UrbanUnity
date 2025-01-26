@@ -8,10 +8,12 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0066cc, #74b9ff);
+      background: url('road.jpg') no-repeat center center fixed;
+      background-size: cover;
       height: 100vh;
       margin: 0;
-      animation: fadeIn 1s ease-in-out;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in effect */
     }
 
     .navbar {
@@ -37,7 +39,7 @@
     }
 
     .form-container {
-      background-color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 30px 40px;
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -45,7 +47,7 @@
       width: 100%;
       text-align: center;
       opacity: 0;
-      animation: fadeInUp 1.5s ease-out forwards;
+      animation: fadeInUp 1.5s ease-out forwards; /* Animation for form container */
     }
 
     .form-container img {
@@ -103,7 +105,12 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 768px) {
+      body {
+        background-size: cover;
+        background-position: center;
+      }
+
       .form-container {
         padding: 20px;
         max-width: 90%;
@@ -169,4 +176,3 @@
 
 </body>
 </html>
-
