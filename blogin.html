@@ -13,7 +13,7 @@
       height: 100vh;
       margin: 0;
       opacity: 0;
-      animation: fadeIn 1.5s ease-in-out forwards; /* Fade-in effect */
+      animation: fadeIn 1.5s ease-in-out forwards;
     }
 
     .navbar {
@@ -35,7 +35,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      padding-top: 80px; /* Adjusted for navbar height */
+      padding-top: 80px;
     }
 
     .form-container {
@@ -47,7 +47,7 @@
       width: 100%;
       text-align: center;
       opacity: 0;
-      animation: fadeInUp 1.5s ease-out forwards; /* Animation for form container */
+      animation: fadeInUp 1.5s ease-out forwards;
     }
 
     .form-container img {
@@ -64,7 +64,7 @@
     input {
       width: 100%;
       padding: 12px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 10px;
       font-size: 14px;
@@ -88,6 +88,13 @@
     .help-text {
       margin-top: 15px;
       font-size: 13px;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: block;
     }
 
     @keyframes fadeIn {
@@ -146,7 +153,11 @@
       <h1>Contractor Login</h1>
       <form id="contractorLoginForm" onsubmit="return validateForm()">
         <input type="text" id="username" placeholder="Username" required>
+        <span id="username-error" class="error"></span>
+
         <input type="password" id="password" placeholder="Password" required>
+        <span id="password-error" class="error"></span>
+
         <button type="submit">Login</button>
       </form>
       <div class="help-text">
@@ -157,18 +168,30 @@
 
   <script>
     function validateForm() {
-      let username = document.getElementById("username").value;
-      let password = document.getElementById("password").value;
-      
-      if (username.trim() === "") {
-        alert("Username is required");
-        return false;
+      let username = document.getElementById("username").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let usernameError = document.getElementById("username-error");
+      let passwordError = document.getElementById("password-error");
+
+      // Clear previous errors
+      usernameError.textContent = "";
+      passwordError.textContent = "";
+
+      let isValid = true;
+
+      // Username validation
+      if (username.length < 6) {
+        usernameError.textContent = "Username must be at least 6 characters.";
+        isValid = false;
       }
-      if (password.trim() === "") {
-        alert("Password is required");
-        return false;
+
+      // Password validation
+      if (password.length < 6) {
+        passwordError.textContent = "Password must be at least 6 characters.";
+        isValid = false;
       }
-      return true;
+
+      return isValid;
     }
   </script>
 
