@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Government Dashboard - Urban Unity</title>
+  <title>Contractor Assignments - Urban Unity</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
   <style>
@@ -43,24 +43,46 @@
 
     .vertical-nav ul li {
       padding: 15px 20px;
-      border: 2px solid #005bb5;
       margin: 5px;
       border-radius: 5px;
-      background-color: #e7f1ff;
       text-align: center;
       transition: background-color 0.3s;
     }
 
-    .vertical-nav ul li:hover {
-      background-color: #cce5ff;
-    }
-
     .vertical-nav ul li a {
       text-decoration: none;
-      color: #005bb5;
       font-size: 16px;
       display: block;
       font-weight: bold;
+    }
+
+    /* Blue styles for New Tasks and Pending Tasks */
+    .vertical-nav ul li.new-task {
+      border: 2px solid #005bb5; /* Blue outline */
+      background-color: #e7f1ff; /* Light blue background */
+    }
+
+    .vertical-nav ul li.new-task:hover {
+      background-color: #cce5ff; /* Darker blue on hover */
+    }
+
+    .vertical-nav ul li.pending-task {
+      border: 2px solid #007bff; /* Blue outline */
+      background-color: #d9ecf5; /* Lighter blue background */
+    }
+
+    .vertical-nav ul li.pending-task:hover {
+      background-color: #c4d7ea; /* Darker blue on hover */
+    }
+
+    /* Red style for Emergency Tasks */
+    .vertical-nav ul li.emergency-task {
+      border: 2px solid #ff0000; /* Red outline */
+      background-color: #f8d7da; /* Light red background */
+    }
+
+    .vertical-nav ul li.emergency-task:hover {
+      background-color: #f5c6cb; /* Darker red on hover */
     }
 
     .content {
@@ -76,21 +98,32 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .issue-card {
+    .assignment-card {
       border: 1px solid #ddd;
       padding: 10px;
       margin: 10px 0;
       border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .issue-card.emergency {
-      background-color: #ffcccc;
-      border-left: 5px solid red;
+    .assignment-card.completed {
+      background-color: #d4edda;
+      border-left: 5px solid green;
     }
 
-    .issue-card.reported {
+    .assignment-card.pending {
       background-color: #fff3cd;
       border-left: 5px solid orange;
+    }
+
+    .assignment-card .status {
+      font-weight: bold;
+    }
+
+    .assignment-card .details {
+      font-size: 14px;
     }
 
     @media (max-width: 768px) {
@@ -117,30 +150,37 @@
 
   <div class="vertical-nav">
     <ul>
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Manage Issues</a></li>
-      <li><a href="#">Contractor Assignments</a></li>
-      <li><a href="#">Reports & Analytics</a></li>
-      <li><a href="#">Settings</a></li>
+      <li class="new-task"><a href="#">New Tasks</a></li>
+      <li class="pending-task"><a href="#">Pending Tasks</a></li>
+      <li class="emergency-task"><a href="#">Emergency Tasks</a></li>
     </ul>
   </div>
 
   <div class="content">
     <div class="dashboard-container">
-      <h2>Government Dashboard</h2>
-      <p>Welcome, [Government Official]. Below are the latest reported issues:</p>
-      <div id="reported-events" class="mt-4">
-        <div class="issue-card emergency">
-          <strong>Emergency:</strong> Large pothole on Main Street causing traffic delays.
+      <h2>Contractor Assignments</h2>
+      <p>Below are the current contractor assignments:</p>
+      <div id="contractor-assignments" class="mt-4">
+        <div class="assignment-card pending">
+          <div>
+            <span class="status">Pending</span>
+            <p class="details">Fix broken streetlight on Oak Street. Assigned to: ABC Construction</p>
+          </div>
+          <button class="btn btn-primary btn-sm">Mark as Completed</button>
         </div>
-        <div class="issue-card emergency">
-          <strong>Emergency:</strong> Broken streetlight in downtown area, security risk.
+        <div class="assignment-card completed">
+          <div>
+            <span class="status">Completed</span>
+            <p class="details">Repair water leakage on 5th Avenue. Assigned to: XYZ Contractors</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" disabled>Completed</button>
         </div>
-        <div class="issue-card reported">
-          <strong>Reported:</strong> Garbage overflow near Market Square.
-        </div>
-        <div class="issue-card reported">
-          <strong>Reported:</strong> Water leakage on 5th Avenue sidewalk.
+        <div class="assignment-card pending">
+          <div>
+            <span class="status">Pending</span>
+            <p class="details">Pothole repair on Main Street. Assigned to: DEF Services</p>
+          </div>
+          <button class="btn btn-primary btn-sm">Mark as Completed</button>
         </div>
       </div>
     </div>
