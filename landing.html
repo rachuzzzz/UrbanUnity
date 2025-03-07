@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
             overflow-x: hidden;
             background: #f0f4f8;
         }
+
         .preloader {
             position: fixed;
             top: 0;
@@ -29,18 +31,61 @@
             z-index: 1000;
             overflow: hidden;
         }
+
         .preloader .text {
             font-size: 4rem;
             font-weight: 600;
             color: white;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0px 40px;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #1e3c72;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2a5298;
+            text-decoration: underline;
+        }
+
         .swiper {
             width: 100%;
             height: 100vh;
             position: relative;
             z-index: 1;
         }
+
         .swiper-slide {
             background-size: cover;
             background-position: center;
@@ -54,6 +99,7 @@
             box-sizing: border-box;
             position: relative;
         }
+
         .swiper-slide::before {
             content: '';
             position: absolute;
@@ -64,78 +110,154 @@
             background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
+
         .swiper-slide h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
-            opacity: 0;
-            transform: translateY(-50px);
         }
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 70px; /* Fixed height */
-            padding: 0 20px; /* Adjusted padding */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .logo img {
-            height: 50px; /* Adjusted logo size */
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 20px; /* Reduced spacing */
-            margin: 0;
-            padding: 0;
-            flex-wrap: wrap; /* Prevents overflow */
-        }
-        .nav-links a {
-            color: #1e3c72;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            padding-right: 30px;
-        }
-        .nav-links a:hover {
-            color: #2a5298; /* Change color on hover */
-            text-decoration: underline; /* Add underline effect on hover */
-        }
+
         .login-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid white;
+            position: absolute;
+            /* Keep absolute positioning */
+            top: 60%;
+            /* Center vertically */
+            left: 50%;
+            /* Center horizontally */
+            transform: translate(-50%, -50%);
+            /* Perfectly center the button */
+            background: rgba(255, 255, 255, 0.1);
+            /* Very transparent white background */
             color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1.1rem;
+            /* White text color */
+            padding: 12px 25px;
+            /* Padding for button size */
+            font-size: 1rem;
+            /* Font size */
+            font-weight: 600;
+            /* Bold text */
+            border-radius: 5px;
+            /* Rounded corners */
+            border: 2px solid white;
+            /* Thicker white border */
             cursor: pointer;
+            /* Pointer cursor on hover */
             transition: all 0.3s ease;
-            margin-top: 20px;
-            backdrop-filter: blur(5px);
-            z-index: 5;
-            position: relative;
+            /* Smooth transition for hover effects */
+            z-index: 10;
+            /* Ensure it stays above the slides */
         }
+
         .login-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+            background: rgba(227, 234, 243, 0.5);
+            /* Slightly less transparent background on hover */
         }
-        .features .feature-item {
+
+
+        .about-section {
+            background: linear-gradient(135deg, #e3eaf3, #f8f9fc);
+            padding: 80px 5%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .about-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text {
+            flex: 1.5;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 5px;
+            padding: 0;
+            font-weight: 600;
+        }
+
+        .about-text hr {
+            border: none;
+            height: 4px;
+            background-color: #1e3c72;
+            margin: 5px 0 10px 0;
+        }
+
+        .features {
+            padding: 50px 20px;
+            background: white;
             text-align: center;
+        }
+
+        .features-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* Ensures equal parts */
+            gap: 40px;
             padding: 20px;
         }
 
-        .feature-item img {
-            width: 50px;
-            height: auto;
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
+
+        .feature-item:hover {
+            background: linear-gradient(135deg, #e3eaf3, #f8f9fc);
+            /* Reduced opacity */
+            transform: translateY(-5px);
+        }
+
+        .feature-item img {
+            width: 60px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .features-row {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
         footer {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
@@ -146,12 +268,13 @@
         }
     </style>
 </head>
+
 <body>
     <div class="preloader">
         <div class="text">UrbanUnity</div>
     </div>
     <header>
-        <h1 class="logo"><img src="logos.png" alt="UrbanUnity" height="80px" width="160px" ></h1>
+        <h1 class="logo"><img src="logos.png" alt="UrbanUnity"></h1>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -169,43 +292,66 @@
                 <h1>Transforming Municipal Services</h1>
             </div>
         </div>
-        <div><button class="login-btn">Login</button></div>
+        <button class="login-btn">Login</button>
     </div>
-    
-    <div class="container features">
-        <div class="row">
-            <div class="col-md-4 feature-item">
+    <div class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="map.jpg" alt="City Map">
+                </div>
+                <div class="about-text">
+                    <h2>About Us
+                        <hr>
+                    </h2>
+                    <p>UrbanUnity is a dynamic platform designed to bridge the gap between citizens and municipal
+                        authorities. We simplify issue reporting, service requests, and community engagement, ensuring a
+                        more responsive and efficient urban experience.</p>
+                    <p>With real-time updates and seamless communication, UrbanUnity empowers residents to contribute
+                        actively to their city’s growth and well-being. Whether it's reporting road repairs, staying
+                        informed about local events, or requesting municipal services, we make civic participation
+                        effortless.</p>
+                    <p>Join UrbanUnity today and be a part of the movement to create smarter, more connected, and
+                        thriving communities!</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container features" id="services">
+        <div class="features-row">
+            <div class="feature-item">
                 <img src="communication.png" alt="Easy Communication">
                 <h5>Easy Communication</h5>
                 <p>Direct channel between citizens and authorities</p>
             </div>
-            <div class="col-md-4 feature-item">
+            <div class="feature-item">
                 <img src="chat.png" alt="Event Notifications">
                 <h5>Event Notifications</h5>
                 <p>Stay updated with community events and announcements</p>
             </div>
-            <div class="col-md-4 feature-item">
+            <div class="feature-item">
                 <img src="service.png" alt="Service Requests">
                 <h5>Service Requests</h5>
                 <p>Submit and track municipal service requests</p>
             </div>
         </div>
     </div>
-    
+
     <footer>
         <p>&copy; 2025 UrbanUnity. All Rights Reserved.</p>
     </footer>
+
     <script>
-        window.addEventListener("load", function() {
-            // GSAP animation for the preloader
+        window.addEventListener("load", function () {
             gsap.to(".preloader", {
                 opacity: 0,
                 duration: 1.5,
                 ease: "power2.out",
                 delay: 1,
-                onComplete: () => {
-                    document.querySelector(".preloader").remove();
-                }
+                onComplete: () => document.querySelector(".preloader").remove()
             });
 
             gsap.to(".preloader .text", {
@@ -213,54 +359,18 @@
                 opacity: 0,
                 duration: 1.5,
                 ease: "power2.out",
-                delay: 0.5,
+                delay: 0.5
             });
 
-            // Initialize Swiper
-            const swiper = new Swiper(".swiper", {
+            new Swiper(".swiper", {
                 loop: true,
                 autoplay: { delay: 4000 },
                 effect: "fade",
-                fadeEffect: {
-                    crossFade: true
-                },
-                speed: 1000,
-                on: {
-                    init: function() {
-                        animateSlideContent(this.slides[this.activeIndex]);
-                    },
-                    slideChangeTransitionStart: function() {
-                        // Hide content of all slides
-                        document.querySelectorAll('.swiper-slide h1, .swiper-slide .login-btn').forEach(element => {
-                            gsap.set(element, { opacity: 0, y: -50 });
-                        });
-                    },
-                    slideChangeTransitionEnd: function() {
-                        animateSlideContent(this.slides[this.activeIndex]);
-                    }
-                }
+                fadeEffect: { crossFade: true },
+                speed: 1000
             });
-
-            function animateSlideContent(slide) {
-                const heading = slide.querySelector('h1');
-                const button = slide.querySelector('.login-btn');
-                
-                gsap.to(heading, {
-                    duration: 1,
-                    opacity: 1,
-                    y: 0,
-                    ease: "power2.out"
-                });
-
-                gsap.to(button, {
-                    duration: 1,
-                    opacity: 1,
-                    y: 0,
-                    ease: "power2.out",
-                    delay: 0.3
-                });
-            }
         });
     </script>
 </body>
+
 </html>
